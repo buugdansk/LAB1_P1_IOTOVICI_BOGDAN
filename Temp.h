@@ -9,4 +9,4 @@ typedef struct TemperatureStruct
 Temperature InitTemp(double value, char scale);
 double CelsiusToFahrenheit(double celsius);
 double FahrenheitToCelsius(double fahrenheit);
-void PrintTemp(Temperature tem
+void PrintTemp(Temperature temp);
