@@ -1,40 +1,23 @@
 #include <stdio.h>
-#include "Temp.h"
 
-int main()
-{
-    char target_scale;
-    double input_value;
-    double converted_value;
+double CtoF(double c) {
+    return (c * 9.0 / 5.0) + 32.0;
+}
 
-    printf("Convert TO: ");
+double FtoC(double f) {
+    return (f - 32.0) * 5.0 / 9.0;
+}
 
-    if (scanf(" %c", &target_scale) != 1) {
-        printf("Error\n");
-        return 1;
-    }
-    if (target_scale == 'C') {
-        printf("temperature value in F: ");
-        if (scanf("%lf", &input_value) != 1) {
-            printf("Error\n");
-            return 1;
-        }
-        converted_value = FahrenheitToCelsius(input_value);
+int main() {
+    double C, F;
 
-    } else if (target_scale == 'F') {
-        printf("temperature value in C: ");
-        if (scanf("%lf", &input_value) != 1) {
-            printf("Error\n");
-            return 1;
-        }
-        converted_value = CelsiusToFahrenheit(input_value);
+    scanf("%lf", &C);
 
-    }
+    printf("%.2f F\n", CtoF(C));
 
-    Temperature final_temp = InitTemp(converted_value, target_scale);
+    scanf("%lf", &F);
 
-    printf("Result: ");
-    PrintTemp(final_temp);
+    printf("%.2f C\n", FtoC(F));
 
     return 0;
 }
